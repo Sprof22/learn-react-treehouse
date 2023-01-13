@@ -34,10 +34,10 @@ const App = () => {
        <div className="scoreboard">
          <Header title="Scoreboard" totalPlayer={1} />
         
-        {/* Player List*/}
+        {/* Player List with props*/}
         <Player 
         name = "Richmond" 
-        score = {56}/>
+        score = {5}/>
        </div>
     )
 }
