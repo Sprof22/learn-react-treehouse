@@ -10,20 +10,20 @@ const Counter = () => {
     return (
         <div className="counter">
                 <button className="counter-action decrement">-</button>
-                <span className="counter-score">35</span>
+                <span className="counter-score">{props.score}</span>
                 <button className="counter-action increment">+</button>
             </div>
     )
 }
 
-const Player = () => {
+const Player = (props) => {
     return(
         <div className="player">
             <span className="player-name">
-                Richmond
+                {props.name}
             </span>
           
-            <Counter />
+            <Counter score = {props.score} />
             
         </div>
     )
@@ -35,7 +35,9 @@ const App = () => {
          <Header title="Scoreboard" totalPlayer={1} />
         
         {/* Player List*/}
-        <Player />
+        <Player 
+        name = "Richmond" 
+        score = {56}/>
        </div>
     )
 }
