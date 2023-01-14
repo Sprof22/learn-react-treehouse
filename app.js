@@ -1,19 +1,23 @@
 const players= [
     {
     name: "Guil",
-    score: 50
+    score: 50,
+    id: 1
   },
   {
     name: "Treasure",
-    score: 85
+    score: 85,
+    id: 2
   },
   {
     name: "Ashley",
-    score: 95
+    score: 95,
+    id: 3
   },
   {
     name: "James",
-    score: 80
+    score: 80,
+    id: 4
   }
 ]
 
@@ -48,7 +52,7 @@ const Player = (props) => {
 const App = (props) => {
   return (
     <div className="scoreboard">
-      <Header title="Scoreboard" totalPlayer={1} />
+      <Header title="Scoreboard" totalPlayer={props.initialPlayers.length} />
 
       {/* Player List */}
       {props.initialPlayers.map(player => 
