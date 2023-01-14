@@ -51,18 +51,11 @@ const App = (props) => {
       <Header title="Scoreboard" totalPlayer={1} />
 
       {/* Player List */}
-      {props.initialPlayers.map(player =>
-        <Player 
-        name={player.name}
-        score={player.score} />
-      
-      )
-      }
-      <Player name="Richmond" score={59} />
-
-      
+      {props.initialPlayers.map(player => 
+        <Player name={player.name} score={player.score} />
+      )}
     </div>
   );
 };
-ReactDOM.render(<App initialPlayers={ players }/>, 
+ReactDOM.render(<App initialPlayers={players}/>, 
 document.getElementById("root"));
