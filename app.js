@@ -1,4 +1,4 @@
-const player= [
+const players= [
     {
     name: "Guil",
     score: 50
@@ -45,7 +45,7 @@ const Player = (props) => {
   );
 };
 
-const App = () => {
+const App = (props) => {
   return (
     <div className="scoreboard">
       <Header title="Scoreboard" totalPlayer={1} />
@@ -61,4 +61,5 @@ const App = () => {
     </div>
   );
 };
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App initialPlayers={ players }/>, 
+document.getElementById("root"));
