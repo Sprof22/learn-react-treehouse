@@ -51,13 +51,16 @@ const App = (props) => {
       <Header title="Scoreboard" totalPlayer={1} />
 
       {/* Player List */}
+      {props.initialPlayers.map(player =>
+        <Player 
+        name={player.name}
+        score={player.score} />
+      
+      )
+      }
       <Player name="Richmond" score={59} />
 
-      <Player name="Sarah" score={34} />
-      <Player name="Gift" score={25} />
-      <Player name="Otor" score={51} />
-      <Player name="Daniel" score={5} />
-      <Player name="Imma" score={5} />
+      
     </div>
   );
 };
