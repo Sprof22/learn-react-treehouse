@@ -1,25 +1,4 @@
-const players= [
-    {
-    name: "Guil",
-    score: 50,
-    id: 1
-  },
-  {
-    name: "Treasure",
-    score: 85,
-    id: 2
-  },
-  {
-    name: "Ashley",
-    score: 95,
-    id: 3
-  },
-  {
-    name: "James",
-    score: 80,
-    id: 4
-  }
-]
+
 
 function Header(props) {
   return (
@@ -29,18 +8,22 @@ function Header(props) {
     </header>
   );
 }
-class Counter extends React.Render {
-  constructor(){
-    super()
-    this.state ={
+class Counter extends React.Component {
+  state ={
       score: 0
     };
+  incrementScore = ()=> {
+    this.setState( prevState => ({
+        score: prevState.score + 1
+  }));
   }
-  incrementScore(){
-    console.log('this good')
-  }
-  decrementScore(){
-    console.log('this good')
+
+  decrementScore = () => {
+    this.setState( prevState => {
+      return {
+        score: prevState.score - 1
+      }
+    });
   }
   render(){
     return (
@@ -63,19 +46,43 @@ const Player = (props) => {
   );
 };
 
-const App = (props) => {
-  return (
-    <div className="scoreboard">
-      <Header title="Scoreboard" totalPlayer={props.initialPlayers.length} />
-
-      {/* Player List */}
-      {props.initialPlayers.map(player => 
-        <Player name={player.name} 
-        key={player.id.toString()}
-        />
-      )}
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    state = {
+      players: [
+        {
+          name: "Guil",
+          
+          id: 1
+        },
+        {
+          name: "Treasure",
+          id: 2
+        },
+        {
+          name: "Ashley",
+          id: 3
+        },
+        {
+          name: "James",
+          id: 4
+        }
+      ]
+    };
+    return (
+      <div className="scoreboard">
+        <Header title="Scoreboard" totalPlayer={this.state.players.length} />
+  
+        {/* Player List */}
+        {this.state.players.map(player => 
+          <Player name={player.name} 
+          key={player.id.toString()}
+          />
+        )}
+      </div>
+    );
+  }
+  
 };
-ReactDOM.render(<App initialPlayers={players}/>, 
+ReactDOM.render(<App />, 
 document.getElementById("root"));
