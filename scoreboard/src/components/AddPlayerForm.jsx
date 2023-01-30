@@ -4,8 +4,9 @@ const AddPlayerForm = () => {
   const [value, setValue] = useState();
   return (
     <form>
-      <input type="text" placeholder={"Enter a Player Name"} />
-      <input type="submit" value={value} onChange={() => setValue()} />
+    {console.log(value)}
+      <input type="text" placeholder="Enter a Player Name" value={value} onChange={(event) => setValue(event.target.value)} />
+      <input type="submit" value="Add a Player" />
     </form>
   );
 };

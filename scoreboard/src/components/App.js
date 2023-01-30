@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import AddPlayerForm from "./AddPlayerForm";
 import Header from "./Header";
 import Player from "./Player";
 
 const App = () => {
-  const [players, setPlayers] = React.useState([
+  const [players, setPlayers] = useState([
     {
       name: "Guil",
       score: 0,
