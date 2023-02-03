@@ -5,7 +5,8 @@ const AddPlayerForm = (props) => {
 
   const handleSubmit = (event) =>{
     event.preventDefault();
-    props.AddPlayer(value);
+    props.addPlayer(value);
+    setValue('')
   }
   return (
     <form onSubmit={(event)=> handleSubmit(event)}>
