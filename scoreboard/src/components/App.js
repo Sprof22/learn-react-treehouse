@@ -48,7 +48,7 @@ const App = () => {
   };
   const handleAddPlayer = (name) => {
     setPlayers(prevPlayers =>[
-      ...prevPlayers,  
+       
       {
         name,
         score: 0,
