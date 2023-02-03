@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const StopWatch = () => {
   return (
     <div className="stopwatch">
-        <h2>Stopwatch</h2>
-        <span className="stopwatch-time">0</span>
-        <button></button>
+      <h2>Stopwatch</h2>
+      <span className="stopwatch-time">0</span>
+      <button>Start</button>
+      <button>Reset</button>
     </div>
-  )
-}
+  );
+};
 
-export default StopWatch
+export default StopWatch;
