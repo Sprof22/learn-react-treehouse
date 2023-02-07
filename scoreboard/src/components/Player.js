@@ -15,7 +15,7 @@ const Player = ({name, id, score, changeScore, removePlayer}) => {
       </span>
 
       <Counter
-        score={score}
+        score={"score"}
         id={id}
         changeScore={changeScore}
       />

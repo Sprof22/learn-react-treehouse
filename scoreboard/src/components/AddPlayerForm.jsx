@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useRef} from "react";
 
-const AddPlayerForm = ({addPlayer}) => {
-  const [value, setValue] = useState();
-
-  const handleSubmit = (event) =>{
+const AddPlayerForm = ({ addPlayer }) => {
+  const playerInput = useRef();
+  const handleSubmit = (event) => {
     event.preventDefault();
-    addPlayer(value);
-    setValue('')
-  }
+    addPlayer(playerInput.current.value);
+    event.currentTarget.reset()
+
+  };
   return (
-    <form onSubmit={(event)=> handleSubmit(event)}>
-    {console.log(value)}
-      <input type="text" placeholder="Enter a Player Name" value={value} onChange={(event) => setValue(event.target.value)} />
+    <form onSubmit={(event) => handleSubmit(event)}>
+      {console.log(playerInput)}
+      <input
+        type="text"
+        placeholder="Enter a Player Name"
+        ref={playerInput}
+      />
       <input type="submit" value="Add a Player" />
     </form>
   );
