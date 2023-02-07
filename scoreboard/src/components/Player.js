@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import PropTypes from 'prop-types'
 import Counter from "./Counter";
 import Icon from "./Icon";
@@ -37,4 +37,4 @@ Player.propTypes = {
 const playerPropsAreEqual = (prevProps, nextProps)=> {
   return prevProps.score=== nextProps.score && prevProps.isHighScore === nextProps.isHighScorex
 }
-export default Player;
+export default memo(Player, playerPropsAreEqual);
