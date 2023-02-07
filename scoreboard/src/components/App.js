@@ -26,8 +26,8 @@ const App = () => {
       id: 4,
     },
   ]);
-  const nextPlayerId = useRef(5)
   const [highScore, setHighScore] = useState()
+  const nextPlayerId = useRef(5)
 
   useEffect(()=>{
     const scores = players.map(player=> player.score)

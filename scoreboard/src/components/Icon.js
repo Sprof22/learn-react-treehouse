@@ -18,7 +18,7 @@ const Icon = ({isHighScore}) => {
 };
 
 Icon.propTypes ={
-    isHighScore: PropTypes.bool.isRequired
+    isHighScore: PropTypes.bool
 }
 
 export default Icon;
