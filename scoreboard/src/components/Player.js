@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types'
 import Counter from "./Counter";
+import Icon from "./Icon";
 
-const Player = ({name, id, score, changeScore, removePlayer}) => {
+const Player = ({name, id, score, changeScore, removePlayer, isHighScore}) => {
   return (
     <div className="player">
       <span className="player-name">
@@ -12,6 +13,7 @@ const Player = ({name, id, score, changeScore, removePlayer}) => {
         >
           ✖
         </button>
+        <Icon isHighScore={isHighScore} />
         {name}
       </span>
 
@@ -30,6 +32,7 @@ Player.propTypes = {
   score: PropTypes.number,
   changeScore: PropTypes.func,
   removePlayer: PropTypes.func,
+  isHighScore: PropTypes.bool.isRequired
 }
 
 export default Player;
