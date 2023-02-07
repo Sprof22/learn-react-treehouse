@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import Counter from "./Counter";
 
 const Player = ({name, id, score, changeScore, removePlayer}) => {
@@ -15,12 +16,20 @@ const Player = ({name, id, score, changeScore, removePlayer}) => {
       </span>
 
       <Counter
-        score={"score"}
+        score={score}
         id={id}
         changeScore={changeScore}
       />
     </div>
   );
 };
+
+Player.propTypes = {
+  name: PropTypes.string,
+  id: PropTypes.number,
+  score: PropTypes.number,
+  changeScore: PropTypes.func,
+  removePlayer: PropTypes.func,
+}
 
 export default Player;

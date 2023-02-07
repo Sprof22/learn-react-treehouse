@@ -4,8 +4,6 @@ const StopWatch = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [elaspedTime, setElaspedTime] = useState(0);
 
-  
-
   useEffect(()=> {
     let id;
     if(isRunning){
