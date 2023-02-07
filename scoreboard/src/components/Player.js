@@ -34,5 +34,7 @@ Player.propTypes = {
   removePlayer: PropTypes.func,
   isHighScore: PropTypes.bool.isRequired
 }
-
+const playerPropsAreEqual = (prevProps, nextProps)=> {
+  return prevProps.score=== nextProps.score && prevProps.isHighScore === nextProps.isHighScorex
+}
 export default Player;
