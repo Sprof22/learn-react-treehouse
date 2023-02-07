@@ -25,8 +25,8 @@ const Player = ({name, id, score, changeScore, removePlayer}) => {
 };
 
 Player.propTypes = {
-  name: PropTypes.string,
-  id: PropTypes.number,
+  name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   score: PropTypes.number,
   changeScore: PropTypes.func,
   removePlayer: PropTypes.func,
