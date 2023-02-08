@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SearchForm from './Components/SearchForm';
 import GifList from "./Components/GifList";
 
 function App() {
+  const [gifs, setGifs] = useState([])
+  useEffect(() => {
+    fetch("https://api.giphy.com/v1/gifs/trending")
+  }, [])
+  
   return (
     <div>
       <div className="main-header">
