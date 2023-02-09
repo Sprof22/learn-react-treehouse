@@ -28,7 +28,7 @@ function App() {
         </div>
       </div>
       <div className="main-content">
-        <GifList />
+        <GifList data={gifs}/>
       </div>
     </div>
   );
