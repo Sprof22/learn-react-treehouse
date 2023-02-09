@@ -5,8 +5,10 @@ import GifList from "./Components/GifList";
 
 function App() {
   const [gifs, setGifs] = useState([]);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('candy');
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    setLoading(true)
     let activeFetch = true;
     axios
       .get(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=zH1fd1S5RPAAGv4Z4vA4qHL45kEicv3C&limit=25&rating=g`)
@@ -14,6 +16,7 @@ function App() {
         // handle success
         if (activeFetch){
           setGifs(response.data.data)
+          setLoading(false)
         }
       })
       .catch(error =>  {
@@ -37,7 +40,7 @@ const handleQueryChange = (searchText) => {
         </div>
       </div>
       <div className="main-content">
-        <GifList data={gifs}/>
+       {loading? <p>Loading ...</p> :  <GifList data={gifs}/>}
       </div>
     </div>
   );
