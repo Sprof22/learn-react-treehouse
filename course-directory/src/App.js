@@ -2,13 +2,14 @@ import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import About from "./components/About";
 import Courses from "./components/Courses";
-import HTML from "./components/courses/CoursesContainer";
-import CSS from "./components/courses/CSS";
-import JavaScript from "./components/courses/JavaScript";
+import CoursesContainer from "./components/courses/CoursesContainer";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Teachers from "./components/Teachers";
 import NotFound from "./components/NotFound";
+import { HTMLCourses, CSSCourses, JSCourses } from './data/courses';
+
+
 
 function App() {
   return (
@@ -20,9 +21,9 @@ function App() {
         <Route path="teachers" element={<Teachers />} />
         <Route path="courses/*" element={<Courses />}>
           <Route index element={<Navigate replace to="html" />} />
-          <Route path="html" element={<HTML />} />
-          <Route path="css" element={<CSS />} />
-          <Route path="javascript" element={<JavaScript />} />
+          <Route path="html" element={<CoursesContainer data={HTMLCourses}/>} />
+          <Route path="css" element={<CoursesContainer data={CSSCourses}/>} />
+          <Route path="javascript" element={<CoursesContainer data={JSCourses}/>} />
           <Route path="*" element={<Navigate replace to="/404" />} />
         </Route>
         <Route path="/*" element={<NotFound />} />
