@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import About from "./components/About";
 import Courses from "./components/Courses";
-import HTML from "./components/courses/HTML";
+import HTML from "./components/courses/CoursesContainer";
 import CSS from "./components/courses/CSS";
 import JavaScript from "./components/courses/JavaScript";
 import Header from "./components/Header";
