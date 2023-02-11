@@ -18,7 +18,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="teachers" element={<Teachers />} />
-        <Route path="courses/*" element={<Courses />} />
+        <Route path="courses/*" element={<Courses />}>
+          <Route index element={<Navigate replace to="html" />} />
+          <Route path="html" element={<HTML />} />
+          <Route path="css" element={<CSS />} />
+          <Route path="javascript" element={<JavaScript />} />
+          <Route path="*" element={<Navigate replace to="/404" />} />
+        </Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
