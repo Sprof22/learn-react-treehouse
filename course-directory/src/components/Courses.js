@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, NavLink, Route, Routes } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import CSS from "./courses/CSS";
 import HTML from "./courses/CoursesContainer";
 import JavaScript from "./courses/JavaScript";
@@ -20,9 +20,7 @@ const Courses = () => (
         </li>
       </ul>
     </div>
-    <Routes>
-      
-    </Routes>
+    <Outlet />
   </div>
 );
 
