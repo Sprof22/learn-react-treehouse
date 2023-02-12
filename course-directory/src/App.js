@@ -7,10 +7,8 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Teachers from "./components/Teachers";
 import NotFound from "./components/NotFound";
-import { HTMLCourses, CSSCourses, JSCourses } from './data/courses';
+import { HTMLCourses, CSSCourses, JSCourses } from "./data/courses";
 import Featured from "./components/Featured";
-
-
 
 function App() {
   return (
@@ -19,14 +17,22 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="teachers" element={<Teachers />} />
-        <Route path="teachers/:topic/:fname-:lname" element={<Featured />} />
+        <Route path="teachers">
+          <Route index element={<Teachers />}></Route>
+          <Route path=":topic/:name" element={<Featured />} />
+        </Route>
         <Route path="courses" element={<Courses />}>
           <Route index element={<Navigate replace to="html" />} />
-          <Route path="html" element={<CoursesContainer data={HTMLCourses}/>} />
-          <Route path="css" element={<CoursesContainer data={CSSCourses}/>} />
-          <Route path="javascript" element={<CoursesContainer data={JSCourses}/>} />
-          </Route>
+          <Route
+            path="html"
+            element={<CoursesContainer data={HTMLCourses} />}
+          />
+          <Route path="css" element={<CoursesContainer data={CSSCourses} />} />
+          <Route
+            path="javascript"
+            element={<CoursesContainer data={JSCourses} />}
+          />
+        </Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>

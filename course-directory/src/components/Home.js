@@ -21,7 +21,10 @@ const Home = () => {
         latest on web technology so you will never fall behind.
       </p>
       <hr />
-      <Link to="/teachers/HTML/Tommy-Wingo">Tommy Wingo</Link>
+      <Link to="/teachers/HTML/Tommy-Wingo">Jamie Waler</Link>
+      <Link to="/teachers/HTML/Jorn-Wingo">Kyle Wingo</Link>
+      <Link to="/teachers/HTML/Tommy-Hdkf">Fish Sticks</Link>
+      <Link to="/teachers/HTML/dkf-Wingo">Tommy Bond</Link>
     </div>
   );
 };
