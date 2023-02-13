@@ -1,7 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const name = useRef();
+  const topic = useRef();
+  let navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let TeacherName = name.current.value;
+    let TeacherTopic = topic.current.value;
+    let path = `teachers/${TeacherTopic}/${TeacherName}`;
+    navigate(path);
+  };
   return (
     <div className="main-content home">
       <h2>Front End Course Directory</h2>
@@ -21,10 +32,11 @@ const Home = () => {
         latest on web technology so you will never fall behind.
       </p>
       <hr />
-      <Link to="/teachers/HTML/Tommy-Wingo">Jamie Waler</Link>
-      <Link to="/teachers/HTML/Jorn-Wingo">Kyle Wingo</Link>
-      <Link to="/teachers/HTML/Tommy-Hdkf">Fish Sticks</Link>
-      <Link to="/teachers/HTML/dkf-Wingo">Tommy Bond</Link>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Name" ref={name} />
+        <input type="text" placeholder="Topic" ref={topic} />
+        <button type="submit">Go!</button>
+      </form>
     </div>
   );
 };
