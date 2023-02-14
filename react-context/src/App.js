@@ -43,9 +43,9 @@ function App() {
   };
 
   return (
-    <UserContext.Provider>
+    <UserContext.Provider value={{user}}>
       <div>
-        <Header user={user} accentColor={accentColor} />
+        <Header  accentColor={accentColor} />
         <Routes>
           <Route path="/" element={<Home user={user} />} />
           <Route

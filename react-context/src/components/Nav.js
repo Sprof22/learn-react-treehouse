@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import UserContext from "../context/UserContext";
 
 const Nav = () => {
+  const {user} = useContext(UserContext)
   return (
-    <UserContext.Consumer>
-      {(context) => {
-        return (
           <nav>
-            {context.user ? (
+            {user ? (
               <>
                 <Link to="/settings">Settings</Link>
                 <Link to="/signout">Sign Out</Link>
@@ -19,9 +18,6 @@ const Nav = () => {
             )}
           </nav>
         );
-      }}
-    </UserContext.Consumer>
-  );
 };
 
 export default Nav;
