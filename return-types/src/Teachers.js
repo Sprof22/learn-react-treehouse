@@ -1,4 +1,5 @@
 import React from 'react';
+import JSTeacher from './JSTeachers';
 
 const Teachers = () =>
   <div className="teachers">
@@ -6,6 +7,7 @@ const Teachers = () =>
     <ul>
       <li>Alena</li>
       <li>Nick</li>
+      <JSTeacher />
       <li>Ben</li>
       <li>Jay</li>
     </ul>
