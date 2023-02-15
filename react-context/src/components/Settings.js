@@ -22,10 +22,7 @@ function Settings(props) {
     <div className="bounds">
       <div className="grid-100">
         <h1>Preferences</h1>
-        <DarkMode
-          isDarkMode={props.isDarkMode}
-          toggleDarkMode={props.toggleDarkMode}
-        />
+        <DarkMode />
         <AccentColor />
         <FontSize />
       </div>
