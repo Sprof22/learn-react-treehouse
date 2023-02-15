@@ -32,12 +32,7 @@ function App() {
             path="settings"
             element={
               <Settings
-                isDarkMode={isDarkMode}
-                toggleDarkMode={toggleDarkMode}
-                accentColor={accentColor}
-                updateAccentColor={setAccentColor}
-                fontPercentage={fontPercentage}
-                updateFontPercentage={setFontPercentage}
+                
               />
             }
           />
