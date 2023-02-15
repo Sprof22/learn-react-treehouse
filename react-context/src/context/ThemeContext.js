@@ -22,17 +22,7 @@ export const ThemeProvider = (props) => {
         setIsDarkMode((currentMode) => !currentMode);
       };
 
-  const signInUser = (username, password) => {
-    const newUser = {
-      username,
-      password,
-    };
-    setUser(newUser);
-  };
-
-  const signOutUser = () => {
-    setUser(null);
-  };
+  
 
   return (
     <ThemeContext.Provider

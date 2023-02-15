@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ThemeContext from "../../context/ThemeContext";
 
 const DarkMode = (props) => {
-  const {isDarkMode, toggleDarkMode} = useContext(ThemeContext)
+  const {isDarkMode, actions} = useContext(ThemeContext)
   return (
     <div>
       <h3>Dark Mode</h3>
@@ -10,7 +10,7 @@ const DarkMode = (props) => {
         type='checkbox'
         className="darkMode-selector"
         checked={isDarkMode}
-        onChange={() => toggleDarkMode()} />
+        onChange={() => actions.toggleDarkMode()} />
     </div>
   );
 }

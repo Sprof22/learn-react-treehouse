@@ -7,7 +7,7 @@ import AccentColor from "./themes/AccentColor";
 import FontSize from "./themes/FontSize";
 import UserContext from "../context/UserContext";
 
-function Settings(props) {
+function Settings() {
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
