@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
-import UserContext from "./context/UserContext";
 
+import { Route, Routes } from "react-router-dom";
 // App Components
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -12,34 +10,19 @@ import NotFound from "./components/NotFound";
 
 function App() {
   
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [accentColor, setAccentColor] = useState("#63537d");
-  const [fontPercentage, setFontPercentage] = useState(100);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
-    document.body.style.fontSize = `${fontPercentage}%`;
-  }, [isDarkMode, fontPercentage]);
-
   
 
-  const toggleDarkMode = () => {
-    setIsDarkMode((currentMode) => !currentMode);
-  };
+  
 
   return (
     
       <div>
-        <Header accentColor={accentColor} />
+        <Header  />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
             path="signin"
-            element={<UserSignIn accentColor={accentColor} />}
+            element={<UserSignIn />}
           />
           <Route
             path="signout"

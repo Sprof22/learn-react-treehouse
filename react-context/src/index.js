@@ -1,20 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { UserProvider } from './context/UserContext';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { UserProvider } from "./context/UserContext";
 
-import './styles/global.css';
-import './styles/new.css';
+import "./styles/global.css";
+import "./styles/new.css";
 
-import App from './App';
+import App from "./App";
+import { ThemeProvider } from "./context/ThemeContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <UserProvider>
-      <App />
-    </UserProvider>
+      <UserProvider>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

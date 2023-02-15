@@ -1,9 +1,11 @@
 import { useContext, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ThemeContext from '../context/ThemeContext';
 import UserContext from '../context/UserContext';
 
-const UserSignIn = (props) => {
+const UserSignIn = () => {
   const {actions} = useContext(UserContext)
+  const {accentColor} = useContext(ThemeContext)
   // State
   const username = useRef(null);
   const password = useRef(null);
@@ -41,8 +43,8 @@ const UserSignIn = (props) => {
               ref={password}
               placeholder="Password" />
             <div className="pad-bottom">
-              <button className="button" type="submit" style={{ background: props.accentColor }}>Sign In</button>
-              <button className="button button-secondary" style={{ color: props.accentColor }} onClick={handleCancel}>Cancel</button>
+              <button className="button" type="submit" style={{ background: accentColor }}>Sign In</button>
+              <button className="button button-secondary" style={{ color: accentColor }} onClick={handleCancel}>Cancel</button>
             </div>
           </form>
         </div>

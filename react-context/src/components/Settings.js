@@ -8,16 +8,15 @@ import FontSize from "./themes/FontSize";
 import UserContext from "../context/UserContext";
 
 function Settings(props) {
-  const {user} = useContext(UserContext)
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
   // If the user isn't logged in navigate them to signin route
   useEffect(() => {
     if (user === null) {
-      navigate('/signin', { replace: true });
+      navigate("/signin", { replace: true });
     }
-  })
-
+  });
 
   return (
     <div className="bounds">
@@ -25,14 +24,10 @@ function Settings(props) {
         <h1>Preferences</h1>
         <DarkMode
           isDarkMode={props.isDarkMode}
-          toggleDarkMode={props.toggleDarkMode} />
-        <AccentColor
-          accentColor={props.accentColor}
-          updateAccentColor={props.updateAccentColor} />
-        <FontSize
-          accentColor={props.accentColor}
-          fontPercentage={props.fontPercentage}
-          updateFontPercentage={props.updateFontPercentage} />
+          toggleDarkMode={props.toggleDarkMode}
+        />
+        <AccentColor />
+        <FontSize />
       </div>
     </div>
   );
