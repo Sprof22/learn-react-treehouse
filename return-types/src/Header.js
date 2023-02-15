@@ -1,5 +1,5 @@
-import React from 'react';
 
-const Header = () => <p>Hello from the Header!</p>;
+
+const Header = () => "which way";
 
 export default Header;

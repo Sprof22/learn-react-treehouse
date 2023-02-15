@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Footer = () => <span>2017</span>;
 
